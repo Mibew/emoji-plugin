@@ -7,9 +7,8 @@ It replaces emojis codes with images in chat messages. The full list of supporte
 
 1. Get the archive with the plugin sources. At the moment the only option is to build the plugin from sources.
 2. Untar/unzip the plugin's archive.
-3. Create folder "`<Mibew root>`/plugins/Mibew/Mibew/Plugin/Emoji" (case does matter).
-4. Put files of the plugins to the just created folder.
-5. Add plugins definition to "plugins" structure in "`<Mibew root>`/configs/config.yml".
+3. Put files of the plugins to the `<Mibew root>/plugins`  folder.
+4. Add plugins definition to "plugins" structure in "`<Mibew root>`/configs/config.yml".
 If the "plugins" stucture looks like `plugins: []` it will become:
 ```yaml
 plugins:

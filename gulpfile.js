@@ -4,7 +4,8 @@ var bower = require('bower'),
     chmod = require('gulp-chmod'),
     zip = require('gulp-zip'),
     tar = require('gulp-tar'),
-    gzip = require('gulp-gzip');
+    gzip = require('gulp-gzip'),
+    rename = require('gulp-rename');
 
 // Installs bower dependencies
 gulp.task('bower', function(callback) {
@@ -53,5 +54,9 @@ var getSources = function() {
             'components/emoji-images/pngs/*'
         ],
         {base: './'}
-    );
+    )
+    .pipe(rename(function(path) {
+        console.log(path.dirname);
+        path.dirname = 'Mibew/Mibew/Plugin/Emoji/' + path.dirname;
+    }));
 }
