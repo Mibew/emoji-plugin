@@ -1,0 +1,9 @@
+{
+    "name": "emoji-plugin",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "emoji-images": "https://github.com/HenrikJoreteg/emoji-images.git#154d7641a7f93699afbd7b4934c490837b8b5973"
+    }
+}
