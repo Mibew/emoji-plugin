@@ -45,6 +45,7 @@ var getSources = function() {
             'js/*',
             'css/*',
             'components/emoji-images/emoji-images.js',
+            'components/emoji-images/readme.md',
             'components/emoji-images/pngs/*'
         ],
         {base: './'}
