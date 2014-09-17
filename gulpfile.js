@@ -17,8 +17,7 @@ gulp.task('bower', function(callback) {
         });
 });
 
-// Builds and packs plugins sources
-gulp.task('default', ['bower'], function() {
+gulp.task('prepare-release', ['bower'], function() {
     var version = require('./package.json').version;
 
     return eventStream.merge(
@@ -30,6 +29,11 @@ gulp.task('default', ['bower'], function() {
     )
     .pipe(chmod(0644))
     .pipe(gulp.dest('release'));
+});
+
+// Builds and packs plugins sources
+gulp.task('default', ['prepare-release'], function() {
+    // The "default" task is just an alias for "prepare-release" task.
 });
 
 /**
