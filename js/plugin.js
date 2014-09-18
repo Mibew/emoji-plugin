@@ -17,15 +17,24 @@
  */
 
 (function (Mibew) {
+    // Initialize separated Marionette.js module for the plugin.
     var module = Mibew.Application.module(
-        'Chat.MibewEmojiPlugin',
+        'MibewEmojiPlugin',
         {startWithParent: false}
     );
 
-    // Start the module only after the parent one will be initialized.
-    Mibew.Application.Chat.on('start', function() {
-        module.start();
-    });
+    // Make the plugin works together with "Chat" and "Invitation" modules.
+    var eventsMap = {
+        'start': function() {
+            module.start();
+        },
+        'stop': function() {
+            module.stop();
+        }
+    }
+
+    Mibew.Application.Chat.on(eventsMap);
+    Mibew.Application.Invitation.on(eventsMap);
 
     module.addInitializer(function() {
         var imagesDir = Mibew.PluginOptions.MibewEmoji.imagesDir;
