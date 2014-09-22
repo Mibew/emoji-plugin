@@ -56,7 +56,6 @@ var getSources = function() {
         {base: './'}
     )
     .pipe(rename(function(path) {
-        console.log(path.dirname);
         path.dirname = 'Mibew/Mibew/Plugin/Emoji/' + path.dirname;
     }));
 }
