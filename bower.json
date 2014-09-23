@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {},
     "devDependencies": {
-        "emoji-images": "https://github.com/HenrikJoreteg/emoji-images.git#154d7641a7f93699afbd7b4934c490837b8b5973"
+        "emoji-images": "https://github.com/HenrikJoreteg/emoji-images.git#154d7641a7f93699afbd7b4934c490837b8b5973",
+        "es5-shim": "~4.0.3"
     }
 }
