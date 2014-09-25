@@ -50,9 +50,9 @@ var getSources = function() {
             'js/*',
             'css/*',
             'components/es5-shim/es5-shim.js',
-            'components/emoji-images/emoji-images.js',
-            'components/emoji-images/readme.md',
-            'components/emoji-images/pngs/*'
+            'components/emojify.js/emojify.js',
+            'components/emojify.js/README.md',
+            'components/emojify.js/images/emoji/*'
         ],
         {base: './'}
     )

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-(function (Mibew) {
+(function (Mibew, emojify) {
     // Initialize separated Marionette.js module for the plugin.
     var module = Mibew.Application.module(
         'MibewEmojiPlugin',
@@ -37,7 +37,7 @@
     Mibew.Application.Invitation.on(eventsMap);
 
     module.addInitializer(function() {
-        var imagesDir = Mibew.PluginOptions.MibewEmoji.imagesDir;
+        emojify.setConfig({'img_dir': Mibew.PluginOptions.MibewEmoji.imagesDir});
 
         // Update message body right after it is added to the messages
         // collection.
@@ -47,9 +47,9 @@
             if (kind == model.KIND_USER || kind == model.KIND_AGENT) {
                 model.set(
                     'message',
-                    emoji(model.get('message'), imagesDir)
+                    emojify.replace(model.get('message'))
                 );
             }
         });
     });
-})(Mibew);
+})(Mibew, emojify);

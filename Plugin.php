@@ -67,7 +67,7 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
         if ($this->isAppropriatePage($request)) {
             $base_path = $request->getBasePath() . '/' . $this->getFilesPath();
             $args['js'][] = $base_path . '/components/es5-shim/es5-shim.js';
-            $args['js'][] = $base_path . '/components/emoji-images/emoji-images.js';
+            $args['js'][] = $base_path . '/components/emojify.js/emojify.js';
             $args['js'][] = $base_path . '/js/plugin.js';
         }
     }
@@ -99,7 +99,7 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
         if ($this->isAppropriatePage($request)) {
             $args['plugins']['MibewEmoji'] = array(
                 'imagesDir' => ($request->getBasePath() . '/' . $this->getFilesPath()
-                    . '/components/emoji-images/pngs'),
+                    . '/components/emojify.js/images/emoji'),
             );
         }
     }
