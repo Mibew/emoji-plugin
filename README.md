@@ -2,6 +2,8 @@
 
 It replaces emojis codes with images in chat messages. The full list of supported emojis can be found at http://www.emoji-cheat-sheet.com/
 
+Emoticons like :-) and ;D are also supported.
+
 
 ## Installation
 
@@ -14,7 +16,22 @@ If the "plugins" stucture looks like `plugins: []` it will become:
 plugins:
     -
         name: "Mibew:Emoji"
+        config: # Plugin's configurations are described below
+            ignore_emoticons: false
 ```
+
+
+## Plugin's configurations
+
+The plugin can be configured with values in "`<Mibew root>`/configs/config.yml" file.
+
+### config.ignore_emoticons
+
+Type: `Boolean`
+
+Default: `false`
+
+If set to true, the plugin only converts :emoji: and ignore emoticons like :-) and ;D. This value is optional and can be skipped.
 
 
 ## Build from sources

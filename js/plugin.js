@@ -37,7 +37,10 @@
     Mibew.Application.Invitation.on(eventsMap);
 
     module.addInitializer(function() {
-        emojify.setConfig({'img_dir': Mibew.PluginOptions.MibewEmoji.imagesDir});
+        emojify.setConfig({
+            img_dir: Mibew.PluginOptions.MibewEmoji.imagesDir,
+            ignore_emoticons: Mibew.PluginOptions.MibewEmoji.ignoreEmoticons
+        });
 
         // Update message body right after it is added to the messages
         // collection.

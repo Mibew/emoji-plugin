@@ -33,6 +33,27 @@ use Symfony\Component\HttpFoundation\Request;
 class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\PluginInterface
 {
     /**
+     * List of the plugin configs.
+     *
+     * @var array
+     */
+    protected $config;
+
+    /**
+     * Class constructor.
+     *
+     * @param array $config List of the plugin config. The following options are
+     * supported:
+     *   - 'ignore_emoticons': boolean, if set to true, the plugin only converts
+     *     :emoji: and ignore emoticons like :-) and ;D. The default value is
+     *     false.
+     */
+    public function __construct($config)
+    {
+        $this->config = $config + array('ignore_emoticons' => false);
+    }
+
+    /**
      * The plugin does not need extra initialization thus it is always ready to
      * work.
      *
@@ -100,6 +121,7 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
             $args['plugins']['MibewEmoji'] = array(
                 'imagesDir' => ($request->getBasePath() . '/' . $this->getFilesPath()
                     . '/components/emojify.js/images/emoji'),
+                'ignoreEmoticons' => $this->config['ignore_emoticons'],
             );
         }
     }
