@@ -49,12 +49,12 @@ var getSources = function() {
             'LICENSE',
             'js/*',
             'css/*',
-            'components/es5-shim/es5-shim.js',
-            'components/es5-shim/LICENSE',
-            'components/es5-shim/README.md',
-            'components/emojify.js/emojify.js',
-            'components/emojify.js/README.md',
-            'components/emojify.js/images/emoji/*'
+            'vendor/es5-shim/es5-shim.js',
+            'vendor/es5-shim/LICENSE',
+            'vendor/es5-shim/README.md',
+            'vendor/emojify.js/emojify.js',
+            'vendor/emojify.js/README.md',
+            'vendor/emojify.js/images/emoji/*'
         ],
         {base: './'}
     )

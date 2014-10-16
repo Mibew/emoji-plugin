@@ -2,7 +2,7 @@
 node_modules
 
 # Do not index bower components
-components
+vendor
 
 # Do not index releases
 release
