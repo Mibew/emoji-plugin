@@ -2,9 +2,9 @@
     "name": "emoji-plugin",
     "version": "0.1.0",
     "private": true,
-    "dependencies": {},
-    "devDependencies": {
+    "dependencies": {
         "emojify.js": "~0.9.4",
         "es5-shim": "~4.0.3"
-    }
+    },
+    "devDependencies": {}
 }
