@@ -24,6 +24,7 @@
 namespace Mibew\Mibew\Plugin\Emoji;
 
 use Mibew\EventDispatcher\EventDispatcher;
+use Mibew\EventDispatcher\Events;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -72,9 +73,9 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
     {
         // Attach CSS and JS files of the plugin to chat window.
         $dispatcher = EventDispatcher::getInstance();
-        $dispatcher->attachListener('pageAddCSS', $this, 'attachCssFiles');
-        $dispatcher->attachListener('pageAddJS', $this, 'attachJsFiles');
-        $dispatcher->attachListener('pageAddJSPluginOptions', $this, 'attachPluginOptions');
+        $dispatcher->attachListener(Events::PAGE_ADD_CSS, $this, 'attachCssFiles');
+        $dispatcher->attachListener(Events::PAGE_ADD_JS, $this, 'attachJsFiles');
+        $dispatcher->attachListener(Events::PAGE_ADD_JS_PLUGIN_OPTIONS, $this, 'attachPluginOptions');
     }
 
     /**
