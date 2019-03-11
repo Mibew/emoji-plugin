@@ -86,7 +86,7 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
     public function attachJSFiles(&$args)
     {
         if ($this->isAppropriatePage($args['request'])) {
-            $base_path = $this->getFilesPath();
+            $base_path = str_replace(DIRECTORY_SEPARATOR, '/', $this->getFilesPath());
             $args['js'][] = $base_path . '/vendor/es5-shim/es5-shim.js';
             $args['js'][] = $base_path . '/vendor/emojify.js/emojify.js';
             $args['js'][] = $base_path . '/js/plugin.js';
@@ -101,7 +101,7 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
     public function attachCssFiles(&$args)
     {
         if ($this->isAppropriatePage($args['request'])) {
-            $args['css'][] = $this->getFilesPath() . '/css/styles.css';
+            $args['css'][] = str_replace(DIRECTORY_SEPARATOR, '/', $this->getFilesPath()) . '/css/styles.css';
         }
     }
 
@@ -116,7 +116,8 @@ class Plugin extends \Mibew\Plugin\AbstractPlugin implements \Mibew\Plugin\Plugi
 
         if ($this->isAppropriatePage($request)) {
             $args['plugins']['MibewEmoji'] = array(
-                'imagesDir' => ($request->getBasePath() . '/' . $this->getFilesPath()
+                'imagesDir' => ($request->getBasePath() . '/'
+                    . str_replace(DIRECTORY_SEPARATOR, '/', $this->getFilesPath())
                     . '/vendor/emojify.js/images/emoji'),
                 'ignoreEmoticons' => $this->config['ignore_emoticons'],
             );
